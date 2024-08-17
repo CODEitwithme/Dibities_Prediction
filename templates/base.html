@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Diabetes Detection{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Inline CSS for Custom Styling -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: #2c3e50; /* Dark blue-gray */
+        }
+        .navbar-brand, .nav-link {
+            color: #ecf0f1 !important; /* Light gray */
+        }
+        .nav-link:hover {
+            background-color: #34495e; /* Slightly darker blue-gray */
+            border-radius: 5px;
+        }
+        .dropdown-menu {
+            background-color: #2c3e50; /* Dark blue-gray */
+        }
+        .dropdown-item {
+            color: #ecf0f1 !important; /* Light gray */
+        }
+        .dropdown-item:hover {
+            background-color: #34495e; /* Slightly darker blue-gray */
+        }
+
+        /* Main container styling */
+        main.container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        /* Footer styling */
+        .footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer span {
+            margin: 0;
+        }
+
+        /* Button and form styling */
+        .btn-outline-success {
+            border-color: #2c3e50;
+            color: #2c3e50;
+        }
+        .btn-outline-success:hover {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+        .form-control {
+            border-radius: 20px;
+            border-color: #d1d1d1;
+        }
+
+        /* Custom media query for responsiveness */
+        @media (max-width: 768px) {
+            .navbar-brand, .nav-link {
+                font-size: 1.2em;
+            }
+            .footer .container {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">DiabetesScout </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'prediction' %}">Predict</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}">About</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        More
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'contact' %}">Contact</a>
+                        <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        {% block content %}
+        <!-- Content will be injected here -->
+        {% endblock %}
+    </main>
+
+    <footer class="footer mt-auto py-3">
+        <div class="container">
+            <span>&copy; 2024. DiabetesScout All rights reserved.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

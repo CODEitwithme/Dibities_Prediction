@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Diabetes Detection{% endblock %}
+
+{% block content %}
+<div class="jumbotron text-center">
+    <h1 class="display-4">Welcome to Diabetes Detection</h1>
+    <p class="lead">Your health is our priority. Use our advanced tool to predict the likelihood of diabetes with just a few clicks.</p>
+    <hr class="my-4">
+    <a class="btn btn-primary btn-lg" href="{% url 'prediction' %}" role="button">Get Started</a>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-4 text-center">
+            <i class="fas fa-diagnoses fa-3x mb-3" style="color: #4caf50;"></i>
+            <h2>Accurate Predictions</h2>
+            <p>Our tool uses state-of-the-art machine learning algorithms to provide you with accurate predictions based on your input data.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+            <i class="fas fa-user-md fa-3x mb-3" style="color: #4caf50;"></i>
+            <h2>Trusted by Experts</h2>
+            <p>Developed in collaboration with healthcare professionals to ensure the highest standards of reliability and trust.</p>
+        </div>
+        <div class="col-lg-4 text-center">
+            <i class="fas fa-lock fa-3x mb-3" style="color: #4caf50;"></i>
+            <h2>Secure and Private</h2>
+            <p>Your data is handled with the utmost security and confidentiality. We value your privacy and protect your information.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="text-center mb-4">How It Works</h2>
+    <div class="row">
+        <div class="col-md-6">
+            <h4>Step 1: Enter Your Information</h4>
+            <p>Provide the required details such as age, blood pressure, glucose level, and other relevant health indicators.</p>
+        </div>
+        <div class="col-md-6">
+            <h4>Step 2: Get Your Prediction</h4>
+            <p>Our tool analyzes your data and provides a prediction on whether you might be at risk of diabetes.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5 text-center">
+    <h2>Join the Fight Against Diabetes</h2>
+    <p>Early detection is key. Use our tool to take control of your health today.</p>
+    <a class="btn btn-success btn-lg" href="{% url 'prediction' %}" role="button">Predict Now</a>
+</div>
+{% endblock %}
